@@ -1,0 +1,58 @@
+/* mixins generic */
+
+// Opacity
+@mixin opacity($value, $ie:true) {
+  opacity: $value;
+  @if $ie == true {
+    $IEValue: $value*100;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$IEValue+")";
+    filter: alpha(opacity=$IEValue);
+  }
+}
+
+// Transition
+@mixin transition($properties) {
+ -webkit-transition: $properties;
+ -moz-transition: $properties;
+ -ms-transition: $properties;
+ -o-transition: $properties;
+ transition: $properties;
+}
+
+// Animation
+@mixin animation($params) {
+  -webkit-animation: $params;
+  -moz-animation:    $params;
+  animation:         $params;
+}
+
+// Transform
+@mixin transform($params) {
+  -webkit-transform: $params;
+  -moz-transform:    $params;
+  transform:         $params;
+}
+@mixin transform-style ($params) {
+  -webkit-transform-style: $params;
+  -moz-transform-style:    $params;
+  transform-style:         $params;
+}
+
+// Perspective
+@mixin perspective($depth: none) { // none | <length>
+  -webkit-perspective: $depth;
+  -moz-perspective:    $depth;
+  perspective:         $depth;
+}
+@mixin perspective-origin($value: 50% 50%) {
+  -webkit-perspective-origin: $value;
+  -moz-perspective-origin:    $value;
+  perspectiv-origine:         $value;
+}
+
+// Filter
+@mixin filter($properties) {
+  -webkit-filter: $properties;
+  filter: $properties;
+}
+

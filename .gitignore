@@ -1,0 +1,12 @@
+node_modules/
+build/
+.idea/
+.sass-cache/
+!.gitignore
+
+# Windows
+Thumbs.db
+thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+

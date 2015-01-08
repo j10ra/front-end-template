@@ -1,0 +1,33 @@
+/* header layout */
+
+.hello-row {
+  @include grid-row();
+
+  .left-column {
+	@include grid-column(12);
+	background: #f1f1f1;
+  }
+  .right-column {
+	@include grid-column(12);
+	background: #cbefc1;
+  }
+  ._full {
+	@include grid-column(12);
+  }
+
+  .right-column, .left-column {
+	height: 200px;
+	margin-top: 10px;
+  }
+
+  p { margin: 10px 0}
+  
+  @media ($tablet-portrait) {
+	.left-column {
+		@include grid-column(4);
+	  }
+	.right-column {
+		@include grid-column(8);
+	  }
+  }
+}

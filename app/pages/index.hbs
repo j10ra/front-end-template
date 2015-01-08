@@ -1,0 +1,35 @@
+---
+title: HTML5 Boilerplate Yeoman Assemble
+---
+
+<!-- Add your site or application content here -->
+<div class="hello-row">
+    <div class="_full">
+        <h1>Hello world! This is HTML5 Yeoman Assemble.</h1>
+    </div>
+</div>
+
+<div class="hello-row">
+    <div class="_full">{{>partial}}</div>
+</div>
+
+<div class="hello-row">
+    <div class="left-column">
+        <p>Sample using grid in foundation</p>
+        {{#each user}}
+            {{name}}
+        {{/each}}
+    </div>
+    <div class="right-column">
+        <p>Sample using grid in foundation</p>
+        <div class="small-10 medium-11 columns">
+            <div id="slider" class="range-slider" data-slider data-options="display_selector: #sliderOutput3;">
+                <span class="range-slider-handle" role="slider" tabindex="0"></span>
+                <span class="range-slider-active-segment"></span>
+            </div>
+        </div>
+        <div class="small-2 medium-1 columns">
+            <p id="sliderOutput3"></p>
+        </div>
+    </div>
+</div>

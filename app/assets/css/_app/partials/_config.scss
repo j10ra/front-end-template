@@ -1,0 +1,33 @@
+/* Configs */
+
+// Layout Colors
+$base-background-color : #fff;
+
+// Font Colors
+$base-font-color       : #111;
+$secondary-font-color  : #ccc;
+$link-color            : #333;
+$link-hover-color      : #0074D9;
+$link-active-color     : #0074D9;
+
+// Font Family
+$base-font         : Arial;
+$secondary-font    : Times New Roman;
+$heading-base-font : Arial;
+
+// Font Sizes
+$base-font-size    :  16px;
+$base-line-height  :  1.6;
+
+// Layout
+$max-width                : 1140; // Use $row-width if you want value with 'px'
+$column-gutter-width      : 30;
+$number-of-columns        : 12;
+
+// Breakpoints
+$mobile				: "min-width: 480px";
+$tablet-portrait	: "min-width: 768px";
+$desktop			: "min-width: 992px";
+$desktop-large		: "min-width: 1200px";
+
+
