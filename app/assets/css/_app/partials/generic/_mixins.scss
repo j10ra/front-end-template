@@ -56,3 +56,17 @@
   filter: $properties;
 }
 
+// Box Shadow
+@mixin box-shadow ($properties) {
+  -webkit-box-shadow: $properties;
+  -moz-box-shadow: $properties;
+  box-shadow: $properties;
+}
+
+// Box Shadow
+@mixin border-radius ($properties) {
+  -webkit-border-radius: $properties;
+  -moz-border-radius: $properties;
+  border-radius: $properties;
+}
+
