@@ -110,7 +110,9 @@ module.exports = function(grunt) {
 			dev: {
 				options: {
 					sassDir: 'app/assets/css',
-					cssDir: 'build/assets/css'
+					cssDir: 'build/assets/css',
+					sourcemap: true,
+					noLineComments: true
 				}
 			}
 		},
