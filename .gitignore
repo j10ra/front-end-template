@@ -3,6 +3,7 @@ build/
 .idea/
 .sass-cache/
 !.gitignore
+npm-debug.log
 
 # Windows
 Thumbs.db
