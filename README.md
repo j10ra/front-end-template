@@ -45,8 +45,8 @@ layouts/ : serves as your primary layout, each of the pages located in <code>pag
 
 ### Running FED template
 Go to the root directory where the template is forked or cloned
-* You can right click on the directory and "Git Bash here" or use your terminal or cmd
-* Type: "npm install" to install node modules from the package.json
+* You can right click on the directory and <code>Git Bash here</code> or use your terminal or cmd
+* Type: <code>npm install</code> to install node modules from the package.json
 
 <p>If you haven't used <a href="http://gruntjs.com/">Grunt</a> before, be sure to check out the <a href="http://gruntjs.com/getting-started">Getting Started</a> guide, as it explains how to create a <a href="http://gruntjs.com/sample-gruntfile"><code>gruntfile.js</code></a> as well as install and use Grunt plugins. Once you're familiar with that process, you may run the template using these pre built grunt tasks</p>
 
