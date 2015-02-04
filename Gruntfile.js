@@ -15,7 +15,7 @@ module.exports = function(grunt) {
 			},
 			js: {
 				files: ['app/assets/js/**/*.js'],
-				tasks: ['copy:mainjs', 'copy:pluginjs']
+				tasks: ['newer:copy:js']
 			},
 			html: {
 				files: ['app/**/*.hbs'],
@@ -23,11 +23,11 @@ module.exports = function(grunt) {
 			},
 			img: {
 				files: ['app/assets/images/**/*.{jpg,gif,png}'],
-				tasks: ['copy:img']
+				tasks: ['newer:copy:img']
 			},
 			fonts: {
 				files: ['app/assets/fonts/**/*.{otf,ttf,woff,eot}'],
-				tasks: ['copy:fonts']
+				tasks: ['newer:copy:fonts']
 			},
 			json: {
 				files: ['app/data/**/*.json'],
@@ -118,62 +118,38 @@ module.exports = function(grunt) {
 		},
 
 		copy: {
-			js: {
-				files: [{
-					        expand: true,
-					        cwd: 'app/assets/js/vendor/',
-					        src: '**/*',
-					        dest: 'build/assets/js/vendor/'
-				        }]
-			},
-			mainjs: {
-				files: [{
-					        expand: true,
-					        cwd: 'app/assets/js/',
-					        src: 'main.js',
-					        dest: 'build/assets/js/'
-				        }]
-			},
-			pluginjs: {
-				files: [{
-					        expand: true,
-					        cwd: 'app/assets/js/',
-					        src: 'plugins.js',
-					        dest: 'build/assets/js/'
-				        }]
-			},
-			iejs: {
-				files: [{
-					        expand: true,
-					        cwd: 'app/assets/js',
-					        src: 'ie.js',
-					        dest: 'build/assets/js'
-				        }]
-			},
-			img: {
-				files: [{
-					        expand: true,
-					        cwd: 'app/assets/images/',
-					        src: '**/*',
-					        dest: 'build/assets/images/'
-				        }]
-			},
-			fonts: {
-				files: [{
-					        expand: true,
-					        cwd: 'app/assets/fonts/',
-					        src: '**/*',
-					        dest: 'build/assets/fonts/'
-				        }]
-			},
-			etc: {
-				files: [{
-					        expand: true,
-					        cwd: 'app/',
-					        src: '*.{png,ico,jpg,gif,md,txt}',
-					        dest: 'build/'
-				        }]
-			}
+            js: {
+                files: [{
+                    expand: true,
+                    cwd: 'app/assets/js/',
+                    src: '**/*.js',
+                    dest: 'build/assets/js/'
+                }]
+            },
+            img: {
+                files: [{
+                    expand: true,
+                    cwd: 'app/assets/images/',
+                    src: '**/*',
+                    dest: 'build/assets/images/'
+                }]
+            },
+            fonts: {
+                files: [{
+                    expand: true,
+                    cwd: 'app/assets/fonts/',
+                    src: '**/*',
+                    dest: 'build/assets/fonts/'
+                }]
+            },
+            etc: {
+                files: [{
+                    expand: true,
+                    cwd: 'app/',
+                    src: '*.{png,ico,jpg,gif,md,txt}',
+                    dest: 'build/'
+                }]
+            }
 		},
 
 		uglify: {
@@ -195,29 +171,51 @@ module.exports = function(grunt) {
 			html: ['build/**/*.html'],
 			js: ['build/assets/js'],
 			css: ['build/assets/css'],
-			img: ['build/assets/images']
-		}
+			img: ['build/assets/images'],
+            fonts: ['build/assets/fonts']
+		},
+
+        pngmin: {
+            compile: {
+                options: {
+                    ext: '.png',
+                    force: true,
+                    quality: '65-80',
+                    concurrency: 8
+                },
+                files: [
+                    {
+                        expand: true, // required option
+                        src: ['**/*'],
+                        cwd: 'app/assets/images/', // required option
+                        dest: 'build/assets/images/'
+                    }
+                ]
+            }
+        }
+
 	});
 
 	grunt.loadNpmTasks('assemble'); // Special case
 
 	// Default task(s).
 	grunt.registerTask('default', [
+        'assemble',
+        'compass:dev',
 		'jshint',
-		'assemble',
-		'compass:dev',
 		'copy',
 		'connect:livereload',
 		'watch'
 	]);
 
-	grunt.registerTask('build', [
-		'clean',
-		'jshint',
-		'assemble',
-		'compass:build',
-		'copy',
-		'uglify'
-	]);
+    grunt.registerTask('build', [
+        'clean',
+        'assemble',
+        'compass:build',
+        'jshint',
+        'uglify',
+        'copy',
+        'pngmin'
+    ]);
 
 };
