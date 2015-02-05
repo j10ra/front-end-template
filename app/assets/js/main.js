@@ -1,9 +1,8 @@
-//Use strict
-//-------------------------------/
-
 var website = website || {};
 
 website.core = (function (page) {
+
+    'use strict';
 
 	page = {
 		init: function () {

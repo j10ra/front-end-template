@@ -1,4 +1,6 @@
+//-------------------------------/
 'use strict';
+//-------------------------------/
 
 module.exports = function(grunt) {
 
@@ -74,7 +76,6 @@ module.exports = function(grunt) {
 		assemble: {
 			options: {
 				assets: 'app/assets',
-				plugins: ['permalinks'],
 				partials: ['app/partials/**/*.hbs'],
 				layoutdir: 'app/layouts',
 				data: ['app/data/**/*.{json,yml}']
@@ -111,7 +112,7 @@ module.exports = function(grunt) {
 				options: {
 					sassDir: 'app/assets/css',
 					cssDir: 'build/assets/css',
-					sourcemap: true,
+                    sourcemap: true,
 					noLineComments: true
 				}
 			}
@@ -203,8 +204,8 @@ module.exports = function(grunt) {
         'assemble',
         'compass:dev',
 		'jshint',
-		'copy',
 		'connect:livereload',
+        'copy',
 		'watch'
 	]);
 
