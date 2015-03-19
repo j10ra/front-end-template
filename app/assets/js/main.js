@@ -11,13 +11,17 @@ website.core = (function () {
 				$('#slider').on('change.fndtn.slider', function () {
 					$('#slider').attr('data-slider');
 				});
-			}
+			},
+            testPublicFunction: function () {
+                console.log('hello world I am a public function');
+            }
 		};
 
 	return {
 		run: function () {
 			page.init();
-		}
+		},
+        runPublicFunction : page.testPublicFunction
 	};
 
 }());
@@ -26,5 +30,6 @@ $(document)
     .foundation()
     .ready(function () {
         website.core.run();
+        website.core.runPublicFunction();
     });
 	
