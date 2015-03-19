@@ -1,0 +1,28 @@
+/* main */
+
+@charset "UTF-8";
+
+// Configurations
+// ---------------------------
+@import "_app/config";
+
+// Load Website defaults
+// ---------------------------
+@import "_app/default";
+
+// SCSS Functions
+// ---------------------------
+@import "_app/functions";
+
+// SCSS Mixins
+// ---------------------------
+@import "_app/mixins";
+
+// Foundation
+// ---------------------------
+@import "_foundation/normalize";
+@import "_foundation/foundation";
+
+// Application
+// ---------------------------
+@import "_app/app";

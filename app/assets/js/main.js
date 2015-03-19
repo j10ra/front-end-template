@@ -1,18 +1,18 @@
 var website = website || {};
 
-website.core = (function (page) {
+website.core = (function () {
 
     'use strict';
 
-	page = {
-		init: function () {
-			console.log('running main.js script...');
+	var page = {
+			init: function () {
+				console.log('running main.js script...');
 
-			$('#slider').on('change.fndtn.slider', function () {
-				$('#slider').attr('data-slider');
-			});
-		}
-	};
+				$('#slider').on('change.fndtn.slider', function () {
+					$('#slider').attr('data-slider');
+				});
+			}
+		};
 
 	return {
 		run: function () {

@@ -12,7 +12,7 @@ module.exports = function(grunt) {
 
 		watch: {
 			css: {
-				files: 'app/assets/css/**/*.scss',
+				files: 'app/assets/scss/**/*.scss',
 				tasks: ['compass:dev']
 			},
 			js: {
@@ -96,21 +96,21 @@ module.exports = function(grunt) {
 			all: [
 				'app/assets/js/**/*.js',
 				'!app/assets/js/plugins.js',
-				'!app/assets/js/vendor/**/*.js'
+				'!app/assets/js/library/**/*.js'
 			]
 		},
 
 		compass: {
 			build: {
 				options: {
-					sassDir: 'app/assets/css',
+					sassDir: 'app/assets/scss',
 					cssDir: 'build/assets/css',
 					environment: 'production'
 				}
 			},
 			dev: {
 				options: {
-					sassDir: 'app/assets/css',
+					sassDir: 'app/assets/scss',
 					cssDir: 'build/assets/css',
                     sourcemap: true,
 					noLineComments: true
@@ -161,6 +161,10 @@ module.exports = function(grunt) {
 			pluginjs: {
 				src: 'app/assets/js/plugins.js',
 				dest: 'build/assets/js/plugins.min.js'
+			},
+			helperjs: {
+				src: 'app/assets/js/helper.js',
+				dest: 'build/assets/js/helper.min.js'
 			},
 			iejs: {
 				src: 'app/assets/js/ie.js',

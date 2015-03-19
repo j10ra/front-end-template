@@ -1,0 +1,86 @@
+/* mixins generic */
+
+// Opacity
+@mixin opacity($value, $ie:true) {
+  opacity: $value;
+  @if $ie == true {
+    $IEValue: $value*100;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$IEValue+")";
+        filter: alpha(opacity=$IEValue);
+  }
+}
+
+// Transition
+@mixin transition($properties) {
+ -webkit-transition: $properties;
+    -moz-transition: $properties;
+     -ms-transition: $properties;
+      -o-transition: $properties;
+         transition: $properties;
+}
+
+// Animation
+@mixin animation($params) {
+  -webkit-animation: $params;
+     -moz-animation: $params;
+          animation: $params;
+}
+
+// Transform
+@mixin transform($params) {
+  -webkit-transform: $params;
+     -moz-transform: $params;
+          transform: $params;
+}
+@mixin transform-style ($params) {
+  -webkit-transform-style: $params;
+     -moz-transform-style: $params;
+          transform-style: $params;
+}
+
+// Perspective
+@mixin perspective($depth: none) { // none | <length>
+  -webkit-perspective: $depth;
+     -moz-perspective: $depth;
+          perspective: $depth;
+}
+@mixin perspective-origin($value: 50% 50%) {
+  -webkit-perspective-origin: $value;
+     -moz-perspective-origin: $value;
+          perspectiv-origine: $value;
+}
+
+// Filter
+@mixin filter($properties) {
+  -webkit-filter: $properties;
+          filter: $properties;
+}
+
+// Box Shadow
+@mixin box-shadow ($properties) {
+  -webkit-box-shadow: $properties;
+     -moz-box-shadow: $properties;
+          box-shadow: $properties;
+}
+
+// Box Shadow
+@mixin border-radius ($properties) {
+  -webkit-border-radius: $properties;
+     -moz-border-radius: $properties;
+          border-radius: $properties;
+}
+
+//Retina image
+@mixin retina-img($url, $width, $height) {
+    @media only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (   min--moz-device-pixel-ratio: 2),
+    only screen and (     -o-min-device-pixel-ratio: 2/1),
+    only screen and (        min-device-pixel-ratio: 2),
+    only screen and (                min-resolution: 192dpi),
+    only screen and (                min-resolution: 2dppx) {
+        /* on retina, use image that's scaled by 2 */
+        background-image: url($url);
+        background-size: $width $height;
+    }
+}
+
