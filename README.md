@@ -8,10 +8,13 @@ This is a propsed templating system which will help FEDs get started on a projec
 .
 ├── app
 |&nbsp;&nbsp;└── assets
-|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;├── css
 |&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;├── fonts
 |&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;├── images
-|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;└── js
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;├── js
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;└── scss
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── _app
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── _foundation
+|&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── main.scss
 |&nbsp;&nbsp;├── data
 |&nbsp;&nbsp;├── layouts
 |&nbsp;&nbsp;├── pages
