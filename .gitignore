@@ -4,6 +4,7 @@ build/
 .sass-cache/
 !.gitignore
 npm-debug.log
+app/assets/bower-components
 
 # Windows
 Thumbs.db
