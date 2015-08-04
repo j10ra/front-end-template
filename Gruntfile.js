@@ -19,9 +19,9 @@ module.exports = function(grunt) {
 				files: ['app/assets/js/**/*.js'],
 				tasks: ['newer:copy:js']
 			},
-			html: {
+			hbs: {
 				files: ['app/**/*.hbs'],
-				tasks: ['assemble']
+				tasks: ['assemble:site']
 			},
 			img: {
 				files: ['app/assets/images/**/*.{jpg,gif,png}'],
@@ -33,7 +33,7 @@ module.exports = function(grunt) {
 			},
 			json: {
 				files: ['app/data/**/*.json'],
-				tasks: ['assemble']
+				tasks: ['assemble:site']
 			},
 			livereload: {
 				options: {
@@ -89,7 +89,18 @@ module.exports = function(grunt) {
 				cwd: 'app/pages/',
 				src: ['**/*.hbs'],
 				dest: 'build/'
-			}
+			},
+            build: {
+                options: {
+                    layout: 'layout.hbs',
+                    assets: 'build/assets',
+                    min: '.min'
+                },
+                expand: true,
+                cwd: 'app/pages/',
+                src: ['**/*.hbs'],
+                dest: 'build/'
+            }
 		},
 
 		jshint: {
@@ -197,6 +208,16 @@ module.exports = function(grunt) {
                     }
                 ]
             }
+        },
+
+        combine_mq: {
+            main: {
+                options: {
+                    beautify: false
+                },
+                src: 'build/assets/css/main.css',
+                dest: 'build/assets/css/main.css'
+            }
         }
 
 	});
@@ -206,7 +227,7 @@ module.exports = function(grunt) {
 	// Default task(s).
 	grunt.registerTask('default', [
 		'clean',
-        'assemble',
+        'assemble:site',
         'compass:dev',
 		'jshint',
 		'connect:livereload',
@@ -216,12 +237,13 @@ module.exports = function(grunt) {
 
     grunt.registerTask('build', [
         'clean',
-        'assemble',
+        'assemble:build',
         'compass:build',
         'jshint',
         'uglify',
         'copy',
-        'pngmin'
+        'pngmin',
+        'combine_mq'
     ]);
 
 };
