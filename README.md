@@ -2,6 +2,8 @@
 ### What is this?
 This is a propsed templating system which will help FEDs get started on a project to maintain best practices and standards accross the team.
 
+The template is pre built with foundation framework - I would recomend this as it
+
 ### Structure
 
 <pre>
@@ -19,9 +21,10 @@ This is a propsed templating system which will help FEDs get started on a projec
 |&nbsp;&nbsp;├── layouts
 |&nbsp;&nbsp;├── pages
 |&nbsp;&nbsp;└── partials
+├── build (will be generated when running grunt)
 ├── Gruntfile.js
 ├── package.json
-├── build
+├── bower.json
 </pre>
 
 > Build your project in <code>app/</code> folder <br>
@@ -49,9 +52,10 @@ layouts/ : serves as your primary layout, each of the pages located in <code>pag
 ### Running FED template
 <p>If you haven't used <a href="http://gruntjs.com/">Grunt</a> before, be sure to check out the <a href="http://gruntjs.com/getting-started">Getting Started</a> guide, as it explains how to create a <a href="http://gruntjs.com/sample-gruntfile"><code>gruntfile.js</code></a> as well as install and use Grunt plugins. Once you're familiar with that process, you may run the template using the pre built grunt tasks below</p>
 
-Go to the root directory where the template is forked or cloned
-* Right click on the directory and <code>Git Bash here</code> or use terminal or cmd
-* Type: <code>npm install</code> to install node modules from the package.json
+Go to the root directory where the template is forked or cloned <br />
+* Right click on the directory and <code>Git Bash here</code> or use terminal or cmd <br />
+* <code>npm install</code> to install node modules from the package.json, see package.json for dependencies<br />
+* <code>bower install</code> to install packages from bower.json, see bower.json for dependencies
 
 ##### Grunt Tasks
 <table>
@@ -61,12 +65,8 @@ Go to the root directory where the template is forked or cloned
         <th>Description</th>
     </tr>
     <tr>
-        <td rowspan="5" valign="top">Default  <br> <code>$ grunt</code></td>
-        <td>jshint</td>
-        <td>Lints js files</td>
-    </tr>
-    <tr>
-        <td>assemble</td>
+        <td rowspan="6" valign="top">Default  <br> <code>$ grunt</code></td>
+        <td>assemble:site</td>
         <td>Compiles handlebar files (layout, partial, pages)</td>
     </tr>
     <tr>
@@ -74,8 +74,16 @@ Go to the root directory where the template is forked or cloned
         <td>Compiles scss files</td>
     </tr>
     <tr>
+        <td>jshint</td>
+        <td>Helps to detect errors and potential problems in js code</td>
+    </tr>
+    <tr>
         <td>connect:livereload</td>
         <td>Automatically reloads the page on update</td>
+    </tr>
+    <tr>
+        <td>copy</td>
+        <td>Copy files automatically</td>
     </tr>
     <tr>
         <td>watch</td>
@@ -83,32 +91,32 @@ Go to the root directory where the template is forked or cloned
     </tr>
     <tr>
         <td rowspan="7" valign="top">Build <br> <code>$ grunt build</code></td>
-        <td>jshint</td>
-        <td>Lints js files</td>
-    </tr>
-    <tr>
-        <td>clean</td>
-        <td>Cleans the build folder and deletes unwanted files</td>
-    </tr>
-    <tr>
-        <td>jshint</td>
-        <td>Lints js files</td>
-    </tr>
-    <tr>
-        <td>assemble</td>
+        <td>assemble:site</td>
         <td>Compiles handlebar files (layout, partial, pages)</td>
     </tr>
     <tr>
         <td>compass:build</td>
-        <td>Compiles scss files</td>
+        <td>Compiles scss files - minified</td>
     </tr>
     <tr>
-        <td>copy</td>
-        <td>Compiles scss files</td>
+        <td>jshint</td>
+        <td>Helps to detect errors and potential problems in js code</td>
     </tr>
     <tr>
         <td>uglify</td>
-        <td>tasked to generate minified files</td>
+        <td>Concatinates, combine and minify js files</td>
+    </tr>
+    <tr>
+        <td>copy</td>
+        <td>Copy files automatically</td>
+    </tr>
+    <tr>
+        <td>pngmin</td>
+        <td>Optimize png for smaller size</td>
+    </tr>
+    <tr>
+        <td>combine_mq</td>
+        <td>Combine matching media queries into one media query definition</td>
     </tr>
 </table>
 

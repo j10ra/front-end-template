@@ -75,7 +75,6 @@ module.exports = function(grunt) {
 
 		assemble: {
 			options: {
-				assets: 'app/assets',
 				partials: ['app/partials/**/*.hbs'],
 				layoutdir: 'app/layouts',
 				data: ['app/data/**/*.{json,yml}']
@@ -83,24 +82,14 @@ module.exports = function(grunt) {
 			site: {
 				options: {
 					layout: 'layout.hbs',
-					assets: 'build/assets'
+					assets: 'build/assets',
+                    bower_components: '/assets/bower-components'
 				},
 				expand: true,
 				cwd: 'app/pages/',
 				src: ['**/*.hbs'],
 				dest: 'build/'
-			},
-            build: {
-                options: {
-                    layout: 'layout.hbs',
-                    assets: 'build/assets',
-                    min: '.min'
-                },
-                expand: true,
-                cwd: 'app/pages/',
-                src: ['**/*.hbs'],
-                dest: 'build/'
-            }
+			}
 		},
 
 		jshint: {
@@ -152,6 +141,14 @@ module.exports = function(grunt) {
                     cwd: 'app/assets/fonts/',
                     src: '**/*',
                     dest: 'build/assets/fonts/'
+                }]
+            },
+            bower_components: {
+                files: [{
+                    expand: true,
+                    cwd: 'app/assets/bower-components/',
+                    src: '**/*',
+                    dest: 'build/assets/bower-components/'
                 }]
             },
             etc: {
@@ -237,7 +234,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('build', [
         'clean',
-        'assemble:build',
+        'assemble:site',
         'compass:build',
         'jshint',
         'uglify',

@@ -16,23 +16,24 @@
     <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-precomposed.png" />
 
     <link rel="stylesheet" href="{{assets}}/css/main.css">
-    <script src="{{assets}}/js/library/modernizr-2.6.1.min.js"></script>
+
+	<script src="{{bower_components}}/liquid-modernizer/modernizer.min.js"></script>
 </head>
 <body>
 
     {{>body}}
 
-    <script src="{{assets}}/js/library/jquery-1.11.1.min.js"></script>
+    <script src="{{bower_components}}/jquery/dist/jquery.min.js"></script>
     <script src="{{assets}}/js/helper.js"></script>
     <script src="{{assets}}/js/plugins.js"></script>
     <script src="{{assets}}/js/main.js"></script>
 
     <!--[if lt IE 9]>
-    <script src="{{assets}}/js/library/html5shiv.min.js"></script>
-    <script src="{{assets}}/js/library/selectivizr.js"></script>
-    <script src="{{assets}}/js/library/respond.min.js"></script>
-    <script src="{{assets}}/js/library/rem.min.js"></script>
-    <![endif]-->
+    <script src="{{bower_components}}/html5shiv/dist/html5shiv.min.js"></script>
+    <script src="{{bower_components}}/selectivizr/selectivizr.js"></script>
+    <script src="{{bower_components}}/respond/dest/respond.min.js"></script>
+    <script src="{{bower_components}}/REM-unit-polyfill/js/rem.min.js"></script>
+	<![endif]-->
 
 
 </body>

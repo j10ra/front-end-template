@@ -13,7 +13,7 @@ website.core = (function () {
 				});
 			},
             testPublicFunction: function () {
-                console.log('hello world I am a public function');
+                console.log('I can be a public function');
             }
 		};
 
