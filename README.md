@@ -2,7 +2,7 @@
 ### What is this?
 This is a propsed templating system which will help FEDs get started on a project to maintain best practices and standards accross the team.
 
-The template is pre built with foundation framework - I would recomend this as it
+The template is pre built with foundation framework - I would recommend this as the framework is built using scss
 
 ### Structure
 
