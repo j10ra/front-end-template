@@ -41,7 +41,7 @@ module.exports = function(grunt) {
 				},
 				files: [
 					'app/**/*.hbs',
-					'app/assets/css/**/*.scss',
+					'app/assets/scss/**/*.scss',
 					'app/assets/img/**/*.{png,jpg,jpeg,gif,webp,svg}'
 				]
 			}
@@ -96,7 +96,7 @@ module.exports = function(grunt) {
 			all: [
 				'app/assets/js/**/*.js',
 				'!app/assets/js/plugins.js',
-				'!app/assets/js/library/**/*.js'
+				'!app/assets/js/components/**/*.js'
 			]
 		},
 

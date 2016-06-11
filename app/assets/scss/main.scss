@@ -20,8 +20,9 @@
 
 // Foundation
 // ---------------------------
-@import "_foundation/normalize";
 @import "_foundation/foundation";
+// Include foundation components here
+@include foundation-everything;
 
 // Application
 // ---------------------------

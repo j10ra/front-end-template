@@ -2,34 +2,25 @@
 title: HTML5 Front End Template
 ---
 
+<h1>FED Template running foundation 6</h1>
 <!-- Add your site or application content here -->
-<div class="hello-row">
-    <div class="_full">
-        <h1>Liquid Interactive Front End Template.</h1>
-    </div>
+
+    <p><a data-open="exampleModal2">Click me for a modal plugin sample</a></p>
+
+<!-- This is the first modal -->
+<div class="reveal" id="exampleModal2" data-reveal>
+    <h1>Awesome!</h1>
+    <p class="lead">I have another modal inside of me!</p>
+    <a class="button" data-open="exampleModal3">Click me for another modal!</a>
+    <button class="close-button" data-close aria-label="Close reveal" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
 </div>
 
-<div class="hello-row">
-    <div class="_full">{{>partial}}</div>
-</div>
-
-<div class="hello-row">
-    <div class="left-column">
-        <p>Sample using grid in foundation</p>
-        {{#each user}}
-            {{name}}
-        {{/each}}
-    </div>
-    <div class="right-column">
-        <p>Sample using Foundation pre built ui</p>
-        <div class="small-10 medium-11 columns">
-            <div id="slider" class="range-slider" data-slider data-options="display_selector: #sliderOutput3;">
-                <span class="range-slider-handle" role="slider" tabindex="0"></span>
-                <span class="range-slider-active-segment"></span>
-            </div>
-        </div>
-        <div class="small-2 medium-1 columns">
-            <p id="sliderOutput3"></p>
-        </div>
-    </div>
+<!-- This is the nested modal -->
+<div class="reveal" id="exampleModal3" data-reveal>
+    <h2>ANOTHER MODAL!!!</h2>
+    <button class="close-button" data-close aria-label="Close reveal" type="button">
+        <span aria-hidden="true">&times;</span>
+    </button>
 </div>
